@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { memo } from 'react';
+import { renderRoutes } from 'react-router-config';
+import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-function App() {
+import routes from './route';
+import store from './store/index';
+
+
+import '@/assets/css/reset.css';
+import LAppHeader from './components/app-header';
+import LAppFooter from './components/app-footer';
+import LAppPlayerBar from "./pages/player/app-player-bar";
+
+
+export default memo(function App() {
+  
+
+  // useDispatch()(changePlayListAction(useLocalStorage("playList")))
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+    <Provider store={store}>
+      <HashRouter>
+        <LAppHeader/>
+        {renderRoutes(routes)}
+        <LAppFooter/>
+        <LAppPlayerBar/>
+      </HashRouter>
+    </Provider>
+  
+  )
+})
