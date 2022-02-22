@@ -21,7 +21,7 @@ export function parseLyric(lyrics) {
     
     mixLyricList[i].content.origin = lyric[i].content;
     if (i >= skip && skip !== -1)
-      mixLyricList[i].content.translate = tLyric[i - skip].content;
+      mixLyricList[i].content.translate = tLyric[i - skip]?.content;
   }
   
   return mixLyricList;
