@@ -5,6 +5,7 @@ import ThemeHeaderSmall from "../../../../../../components/theme-header-small";
 import { Link, useParams } from "react-router-dom";
 import { getSimilarSong } from "../../../../../../services/song-detail";
 import { useAddToPlayList, usePlayMusic } from "../../../../../../hooks";
+import Singer from "../../../../../../components/singer";
 
 const SimilarSong = memo(function SimilarSong(props) {
   const params = useParams();
@@ -31,19 +32,8 @@ const SimilarSong = memo(function SimilarSong(props) {
               >
                 <div className="simi-item-left">
                   <Link to={"/discover/song-detail/" + item.id} className="song-name text-nowrap">{item?.name}</Link>
-                  <div className="song-auth text-nowrap">{
-                    item?.artists?.map((author, index) => {
-                      return (
-                        <span key={author.id}>
-                          {index === 0 ? "" : "/"}
-                          <Link to={"#"}>
-                            {author.name}
-                          </Link>
-                        </span>
-                      )
-                    })
-                  }
-                    {/*<Link to="#" className="song-auth text-nowrap">x</Link>*/}
+                  <div className="song-auth text-nowrap">
+                    <Singer singerList={item?.artists} splitSpace={false} />
                   </div>
                 
                 </div>

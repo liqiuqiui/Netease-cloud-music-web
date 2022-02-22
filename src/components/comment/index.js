@@ -62,7 +62,7 @@ const Comment = memo(function Comment(props) {
   return (
     <CommentWrapper>
       <SendComment commentNum={total || 0}/>
-      {currentPage === 1 && <>
+      {currentPage === 1 &&!!hotComments?.length&& <>
         <h3 className="comment-title">最热评论</h3>
         {
           hotComments?.map((item) => {

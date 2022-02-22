@@ -10,7 +10,7 @@ export const SimilarSongWrapper = styled.div`
       flex-direction: column;
       justify-content: space-between;
 
-      .song-auth > a {
+      .song-auth  a {
         color: #999;
       }
     }

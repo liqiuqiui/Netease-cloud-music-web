@@ -43,7 +43,6 @@ const Player = memo(function Player(props) {
     .then(res => setSongComments(res))
   }, [params, pageNum])
   const onPageChange = (newPage) => {
-    console.log(newPage);
     setPageNum(newPage);
   }
   return (

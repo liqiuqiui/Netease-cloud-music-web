@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect, useParams } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 import LDiscover from '../pages/discover';
@@ -98,19 +98,25 @@ const routes = [
     component: LDiscover,
     routes: [
       // {
-      //   path: '/',
-      //   // component: LRecommend,
-      //   exact: true,
-      //   render: () => <Redirect to='/discover'/>
+      //   path: '/discover',
+      //   render: () => <Redirect to="/discover/recommend"/>
       // },
       {
-        path: '/discover',
-        exact: true,
+        path: '/discover/recommend',
+        // exact: true,
         component: LRecommend,
       },
+      // {
+      //   path: "/discover/toplist",
+      //   render: () => <Redirect to="/discover/toplist?id=19723756"/>
+      // },
       {
         path: '/discover/toplist',
-        // exact: true,
+        // render(routeProps){
+        //   console.log(routeProps.location.search)
+        //   routeProps.location.search = "?id=1978921795"
+        //   return <LTopList {...routeProps}/>
+        // },
         component: LTopList
       },
       {

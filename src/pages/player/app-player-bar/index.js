@@ -37,7 +37,7 @@ export default memo(function LPlayerBar(props) {
   const [isShowPlayBar, setIsShowPlayBar] = useState(false);
   const [isPlayBarLocked, setIsPlayBarLocked] = useState(true);
   const [isVolShow, setIsVolShow] = useState(false);
-  const [volume, setVolume] = useState(5000);
+  const [volume, setVolume] = useState(1000);
   const [isShowSongListPanel, setIsShowSongListPanel] = useState(false);
   //redux hooks
   const dispatch = useDispatch();
@@ -89,7 +89,9 @@ export default memo(function LPlayerBar(props) {
         console.log("播放失败", err)
       })
   }, [playbackState, currentSong]);
-  
+  useEffect(()=>{
+    audioRef.current.volume = volume / 10000;
+  },[volume])
   const audioRef = useRef();
   
   //other handle
@@ -199,7 +201,7 @@ export default memo(function LPlayerBar(props) {
   
   const handleVolumeChange = (val) => {
     setVolume(val)
-    audioRef.current.volume = val / 10000;
+    // audioRef.current.volume = val / 10000;
   }
   
   const lyricHandle = (currentLyricIndex) => {
@@ -265,7 +267,7 @@ export default memo(function LPlayerBar(props) {
                   picUrl.length
                     ? picUrl + "?param=35y35"
                     : "http://s4.music.126.net/style/web2/img/default/default_album.jpg"
-                }/>
+                } alt=""/>
             </div>
             <div className="info">
               <div className="song">

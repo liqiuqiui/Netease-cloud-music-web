@@ -10,6 +10,7 @@ import {
 import { formatMinuteSecond } from "@/utils/format-utils";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Singer from "../../../../../components/singer";
 // import { changeCurrentSongAction, changeCurrentSongIndexAction } from "../../../store/actionCreators";
 
 export default memo(function ListPanel(props) {
@@ -57,9 +58,12 @@ export default memo(function ListPanel(props) {
                     <i className="ico dl">下载</i>
                     <i className="ico del" onClick={e => handleRemoveSongClick(song.id,e)}>删除</i>
                   </div>
-                  <div className="col col4 text-nowrap"><span className="singer-name">{
-                    song.ar.map(i => i.name).join("/")
-                  }</span></div>
+                  <div className="col col4 text-nowrap">
+                    <Singer singerList={song.ar} splitSpace={false} />
+                  {/*  <span className="singer-name">{*/}
+                  {/*  song.ar.map(i => i.name).join("/")*/}
+                  {/*}</span>*/}
+                  </div>
                   <div className="col col5">{formatMinuteSecond(song.dt)}</div>
                   <div className="col col6"><span className="sprite_playlist from"/></div>
                 </SongItem>

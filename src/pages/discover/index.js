@@ -19,7 +19,7 @@ export default memo(function LDiscover(props) {
             {
               discoverMenu.map(item => {
                 return (
-                  <li key={item.title}><NavLink exact={true} to={item.link} >{item.title}</NavLink></li>
+                  <li key={item.title}><NavLink to={item.link} >{item.title}</NavLink></li>
                 )
               })
             }

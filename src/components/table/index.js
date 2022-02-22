@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { Wrapper } from "./style.js"
 
 const Table = memo(function Table(props) {
+  // const indexClass = ['.first', '.second', '.third', '.fourth', '.fifth', '.sixth', '.seventh', '.eighth']
   const {columns, data} = props;
   return (
     <Wrapper className="list-table">
@@ -17,24 +18,24 @@ const Table = memo(function Table(props) {
           )
         })
       }
-        {/*<th className="first"/>*/}
-        {/*<th className="second">标题</th>*/}
-        {/*<th className="third">时长</th>*/}
-        {/*<th className="fourth">歌手</th>*/}
       </tr>
       </thead>
       <tbody>
       {
         data?.map((item, index) => {
-          return (<tr className="row" key={item.name}>
+          return (<tr className="row" key={index}>
             {
               columns?.map((column) => {
                 return (
-                  <td key={column.title}>
-                    <div>
+                  <td
+                    key={column.title}
+                    onMouseEnter={column?.onMouseEnter}
+                    onMouseLeave={column.onMouseLeave}
+                  >
+                    <div style={{padding: index > 2 ? "5px 10px" : "10px"}}>
                       {
                         column?.render
-                          ? column.render(item, column.index ? index : "")
+                          ? column.render(item, index)
                           : (column.dataIndex ? item[column.dataIndex] : "")
                       }
                     </div>
@@ -45,12 +46,6 @@ const Table = memo(function Table(props) {
           </tr>)
         })
       }
-      {/*<tr>*/}
-      {/*  <td>1</td>*/}
-      {/*  <td>2</td>*/}
-      {/*  <td>3</td>*/}
-      {/*  <td>4</td>*/}
-      {/*</tr>*/}
       </tbody>
     </Wrapper>
   )
@@ -63,7 +58,9 @@ Table.propTypes = {
     key: PropTypes.any,
     title: PropTypes.string,
     render: PropTypes.func,
-    index: PropTypes.bool
+    index: PropTypes.bool,
+    // onMouseEnter: PropTypes.func,
+    // onMouseLeave: PropTypes.func
   })).isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

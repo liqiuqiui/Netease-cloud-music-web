@@ -7,9 +7,9 @@ import CommenterItem from "../commenter-item";
 
 const CommentItem = memo(function CommentItem(props) {
   const {commentObj} = props;
-  useEffect(() => {
-    console.log(commentObj)
-  }, [commentObj])
+  // useEffect(() => {
+  //   console.log(commentObj)
+  // }, [commentObj])
   return (
     <CommentItemWrapper>
       <div className="item-left">

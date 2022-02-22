@@ -18,9 +18,21 @@ export const Wrapper = styled.div`
 
   ul {
     li {
+      &:hover {
+        background-color: #f4f2f2;
+      }
+
+      &.active {
+        background: #e6e6e6;
+      }
+    }
+
+    li > a {
       padding: 10px 0 10px 20px;
       display: flex;
       column-gap: 10px;
+      cursor: pointer;
+      text-decoration: none;
 
       .left {
         width: 40px;
@@ -30,6 +42,7 @@ export const Wrapper = styled.div`
           width: 40px;
         }
       }
+
 
       .right {
         display: flex;

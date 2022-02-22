@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 // import { addToPlayListAndPlayBackAction, changePlaybackStateAction } from "../../../../../player/store";
 import { usePlayMusic, useAddToPlayList } from "@/hooks";
 import Operates from "../../../../../../components/operates";
+import Singer from "../../../../../../components/singer";
 // import { shallowEqual, useSelector } from "react-redux";
 
 const SongInfo = memo(function SongInfo(props) {
@@ -51,34 +52,24 @@ const SongInfo = memo(function SongInfo(props) {
             <div className="sprite_icon2 ico"/>
             <div className="name">
               <em>{songDetail?.name}</em>
-              {songDetail?.mv>0&&<Link to="#" className="mv sprite_icon2" title="播放mv" />}
-              {songDetail?.tns?.length>0&&<div className="alias">{songDetail?.tns[0]}</div>}
+              {songDetail?.mv > 0 && <Link to="#" className="mv sprite_icon2" title="播放mv"/>}
+              {songDetail?.tns?.length > 0 && <div className="alias">{songDetail?.tns[0]}</div>}
             </div>
           </div>
           <p className="singer-name">
             歌手：
             {
-              songDetail?.ar?.map((item, index) => {
-                return (<span key={item.id}>
-                  {index === 0 ? "" : " / "}
-                  <a>{item.name}</a>
-                </span>)
-              })
+              <Singer singerList={songDetail?.ar} />
+              // songDetail?.ar?.map((item, index) => {
+              //   return (<span key={item.id}>
+              //     {index === 0 ? "" : " / "}
+              //     <Link to={"/artist?id=" + item.id}>{item.name}</Link>
+              //   </span>)
+              // })
             }
           </p>
           <p>所属专辑：<a>{songDetail?.al?.name}</a></p>
-          
-          {/*<div className="operates">*/}
-          {/*  <div className="sprite_button" onClick={e => playMusic(params.id)}>*/}
-          {/*    <i className="sprite_button"><em className="sprite_button"/>播放</i>*/}
-          {/*  </div>*/}
-          {/*  <div className="sprite_button" onClick={e => addToPlayList(params.id)}/>*/}
-          {/*  <div className="sprite_button"><i className="sprite_button">收藏（12343）</i></div>*/}
-          {/*  <div className="sprite_button"><i className="sprite_button">分享</i></div>*/}
-          {/*  <div className="sprite_button"><i className="sprite_button">下载</i></div>*/}
-          {/*  <div className="sprite_button"><i className="sprite_button">（<span>15488</span>）</i></div>*/}
-          {/*</div>*/}
-          <Operates/>
+          <Operates onPlayMusic={e=>playMusic(songDetail.id)} />
           <div className="lyric-content" style={{
             height: isShowMoreLyric ? "auto" : 20 * 10 + "px"
           }}>

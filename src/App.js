@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { renderRoutes } from 'react-router-config';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter , BrowserRouter} from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import routes from './route';
@@ -21,12 +21,12 @@ export default memo(function App() {
   
   return (
     <Provider store={store}>
-      <HashRouter>
+      <BrowserRouter>
         <LAppHeader/>
         {renderRoutes(routes)}
         <LAppFooter/>
         <LAppPlayerBar/>
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   
   )

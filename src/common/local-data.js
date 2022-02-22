@@ -68,7 +68,7 @@ export const footerImages = [
 export const discoverMenu = [
   {
     title: "推荐",
-    link: "/discover"
+    link: "/discover/recommend"
   },
   {
     title: "排行榜",

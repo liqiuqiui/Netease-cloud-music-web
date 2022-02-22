@@ -6,14 +6,14 @@ import PropTypes from "prop-types";
 import { Wrapper } from "./style.js"
 
 const Operates = memo(function Operates(props) {
-  const {onPlayMusic, onAddToPlayList, playText, favorText, shareText, downloadText, commentText} = props;
+  const {onPlayMusic, onFavor, playText, favorText, shareText, downloadText, commentText} = props;
   return (
     <Wrapper>
       {/*<div className="operates">*/}
       <div className="sprite_button" onClick={onPlayMusic}>
         <i className="sprite_button"><em className="sprite_button"/>{playText}</i>
       </div>
-      <div className="sprite_button" onClick={onAddToPlayList}/>
+      <div className="sprite_button" onClick={onFavor}/>
       <div className="sprite_button"><i className="sprite_button">{favorText}</i></div>
       <div className="sprite_button"><i className="sprite_button">{shareText}</i></div>
       <div className="sprite_button"><i className="sprite_button">{downloadText}</i></div>
@@ -32,7 +32,7 @@ Operates.propTypes = {
   commentText: PropTypes.string,
   
   onPlayMusic: PropTypes.func,
-  onAddToPlayList: PropTypes.func
+  onFavor: PropTypes.func
 };
 Operates.defaultProps = {
   playText: "播放",

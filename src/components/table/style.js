@@ -37,10 +37,17 @@ export const Wrapper = styled.table`
     tr {
       td {
         > div {
-          padding: 10px;
+          //padding: 10px;
           display: flex;
           align-items: center;
+          column-gap: 10px;
+          overflow: hidden;
+
+          //&:nth-of-type(-n+3) {
+          //  padding: 10px;
+          //}
         }
+
 
         .play {
           display: inline-block;

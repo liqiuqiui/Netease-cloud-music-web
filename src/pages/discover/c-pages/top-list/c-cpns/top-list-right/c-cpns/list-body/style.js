@@ -38,8 +38,81 @@ export const Wrapper = styled.div`
   }
 
   .list-content {
+    tbody {
+      tr:hover td:nth-of-type(3) .time {
+        display: none;
+      }
+
+      tr:hover td:nth-of-type(3) .operates {
+        display: flex;
+      }
+      .mv{
+        width: 23px;
+        height: 17px;
+        background-position: 0 -151px;
+      }
+      .mv:hover{
+        background-position: -30px -151px;
+      }
+    }
+
     .row {
-      cursor: pointer;
+      //cursor: pointer;
+
+      .play:hover {
+        background-position: 0 -128px;
+      }
+      .current-play{
+        background-position: -20px -128px !important;
+      }
+
+      .operates {
+        width: 110%;
+        display: none;
+        justify-content: space-between;
+        margin-right: -5px;
+
+        i {
+          display: inline-block;
+          width: 18px;
+          height: 16px;
+          cursor: pointer;
+        }
+
+        .add-to {
+          width: 13px;
+          height: 13px;
+          background-position: 0 -700px;
+
+          &:hover {
+            background-position-x: -22px;
+          }
+        }
+
+        .favor {
+          background-position: 0 -174px;
+
+          &:hover {
+            background-position-x: -20px;
+          }
+        }
+
+        .share {
+          background-position: 0 -195px;
+
+          &:hover {
+            background-position-x: -20px;
+          }
+        }
+
+        .download {
+          background-position: -81px -174px;
+
+          &:hover {
+            background-position-x: -104px;
+          }
+        }
+      }
     }
 
     //.content-head {
