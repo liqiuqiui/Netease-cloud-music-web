@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import {
-  changeCurrentSongAction, changeCurrentSongIndexAction, changePlaybackStateAction,
+  changeCurrentSongAction,
+  changeCurrentSongIndexAction,
+  changePlaybackStateAction,
   changePlayListAction,
   getSongLyricAction
 } from "../pages/player/store/actionCreators";

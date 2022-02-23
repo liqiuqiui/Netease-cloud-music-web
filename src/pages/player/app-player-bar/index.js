@@ -89,9 +89,9 @@ export default memo(function LPlayerBar(props) {
         console.log("播放失败", err)
       })
   }, [playbackState, currentSong]);
-  useEffect(()=>{
+  useEffect(() => {
     audioRef.current.volume = volume / 10000;
-  },[volume])
+  }, [volume])
   const audioRef = useRef();
   
   //other handle
@@ -205,7 +205,8 @@ export default memo(function LPlayerBar(props) {
   }
   
   const lyricHandle = (currentLyricIndex) => {
-    if (lyricList.length > 0) {
+    if (lyricList.length > 0 && currentLyricIndex >= 0) {
+      // debugger
       //有词
       if (lyricList[currentLyricIndex].content.origin) {
         //有翻译
@@ -219,6 +220,7 @@ export default memo(function LPlayerBar(props) {
         return lyricHandle(currentLyricIndex - 1);
       }
     }
+    return false;
   }
   const handleCloseSongListPanel = useCallback(() => {
     setIsShowSongListPanel(false);
@@ -302,22 +304,9 @@ export default memo(function LPlayerBar(props) {
               </div>
               {/*  progress end */}
               <span className="lyric-tip"
-                    style={{display: lyricList?.length && !isShowSongListPanel ? "inline-block" : "none"}}
+                    style={{display: lyricList?.length && !!lyricHandle(currentLyricIndex) && !isShowSongListPanel ? "inline-block" : "none"}}
               >
                 {lyricHandle(currentLyricIndex)}
-                {/*{*/}
-                {/*  lyricList.length*/}
-                {/*  && (lyricList[currentLyricIndex].content.translate*/}
-                {/*    ? "原：" + lyricList[currentLyricIndex].content.origin*/}
-                {/*    : lyricList[currentLyricIndex].content.origin)*/}
-                {/*}*/}
-                {/*{lyricList.length && lyricList[currentLyricIndex].content.translate ? <br/> : ""}*/}
-                {/*{*/}
-                {/*  lyricList.length*/}
-                {/*  && lyricList[currentLyricIndex].content.translate*/}
-                {/*    ? ("译：" + lyricList[currentLyricIndex].content.translate)*/}
-                {/*    : ""*/}
-                {/*}*/}
               </span>
             
             </div>

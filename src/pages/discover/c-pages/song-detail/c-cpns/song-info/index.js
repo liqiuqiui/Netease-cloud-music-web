@@ -27,6 +27,7 @@ const SongInfo = memo(function SongInfo(props) {
   const handleSpreadClick = () => {
     setIsShowMoreLyric(v => !v);
   }
+  
   // const handlePlayMusic = () => {
   //
   //   play()
@@ -58,18 +59,10 @@ const SongInfo = memo(function SongInfo(props) {
           </div>
           <p className="singer-name">
             歌手：
-            {
-              <Singer singerList={songDetail?.ar} />
-              // songDetail?.ar?.map((item, index) => {
-              //   return (<span key={item.id}>
-              //     {index === 0 ? "" : " / "}
-              //     <Link to={"/artist?id=" + item.id}>{item.name}</Link>
-              //   </span>)
-              // })
-            }
+            {<Singer singerList={songDetail?.ar} />}
           </p>
-          <p>所属专辑：<a>{songDetail?.al?.name}</a></p>
-          <Operates onPlayMusic={e=>playMusic(songDetail.id)} />
+          <p>所属专辑：<Link to={"/album?id="+songDetail?.al?.id}>{songDetail?.al?.name}</Link></p>
+          <Operates onPlayMusic={e=>playMusic(songDetail.id)} onAddToPlaylist={e=>addToPlayList(songDetail.id)} />
           <div className="lyric-content" style={{
             height: isShowMoreLyric ? "auto" : 20 * 10 + "px"
           }}>

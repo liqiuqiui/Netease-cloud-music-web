@@ -32,7 +32,6 @@ const TopListLeft = memo(function TopListLeft(props) {
                     <div className="right-bottom">{item?.updateFrequency}</div>
                   </div>
                 </Link>
-              
               </li>
             )
           })
@@ -57,7 +56,6 @@ const TopListLeft = memo(function TopListLeft(props) {
             )
           })
         }
-      
       </ul>
     </Wrapper>
   )

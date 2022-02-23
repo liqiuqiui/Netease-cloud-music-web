@@ -43,7 +43,7 @@ const TopListRight = memo(function TopListRight(props) {
     getPlaylistComment({id, offset: (pageNum - 1) * 20})
     .then(res => {
       setCommentInfo(res)
-      console.log(res)
+      // console.log(res)
     })
   }, [pageNum, id])
   return (

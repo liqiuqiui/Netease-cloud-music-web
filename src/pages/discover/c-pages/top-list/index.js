@@ -20,8 +20,9 @@ const TopList = memo(function TopList(props) {
   }, [dispatch]);
   
   useEffect(() => {
-    const id = queryStringParser(location.search).id||19723756;
-    dispatch(getTopListDataListAction(id))
+    const id = queryStringParser(location.search).id || 19723756;
+    dispatch(getTopListDataListAction(id));
+    window.scrollTo(0, 0);
   }, [dispatch, location.search])
   return (
     <Wrapper className="wrap-v2 top-list wrap-bg-left-line">

@@ -11,11 +11,7 @@ import { formatMinuteSecond } from "../../../../../../../../utils/format-utils";
 import { Link } from "react-router-dom";
 import Singer from "../../../../../../../../components/singer";
 import { useAddToPlayList, usePlayMusic } from "../../../../../../../../hooks";
-// utils
-// import queryStringParser from "@/utils/queryStringParser";
 
-//requests
-// import { getTopListDetail } from "../../../../../../../../services/top-list";
 
 const ListBody = memo(function ListBody(props) {
   const playMusic = usePlayMusic();
@@ -29,7 +25,7 @@ const ListBody = memo(function ListBody(props) {
     {
       title: "",
       style: {
-        width: "77px",
+        width: "25px",
         paddingLeft: "20px"
       },
       index: true,
@@ -43,11 +39,11 @@ const ListBody = memo(function ListBody(props) {
             }}>
             {index + 1}
             </span>
-            <i className="sprite_icon2" style={{
-              width: "16px",
-              height: "17px",
-              backgroundPosition: " -67px -283px",
-            }}/>
+            {/*<i className="sprite_icon2" style={{*/}
+            {/*  width: "16px",*/}
+            {/*  height: "17px",*/}
+            {/*  backgroundPosition: " -67px -283px",*/}
+            {/*}}/>*/}
           </>
         )
       }

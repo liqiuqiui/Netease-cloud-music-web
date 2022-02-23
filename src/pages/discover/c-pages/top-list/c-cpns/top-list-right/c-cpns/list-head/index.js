@@ -4,11 +4,20 @@ import PropTypes from "prop-types";
 
 //components
 import { Wrapper } from "./style.js";
-import Operates from "../../../../../../../../components/operates";
-import { formatMonthDay } from "../../../../../../../../utils/format-utils";
+import Operates from "@/components/operates";
+import { formatMonthDay } from "@/utils/format-utils";
+import { shallowEqual, useSelector } from "react-redux";
+import {
+  useChangeWholePlaylistAndPlayBack,
+  useAddAllToPlaylist
+} from "@/hooks";
 
 const ListHead = memo(function ListHead(props) {
   const {headData} = props;
+  const changeWholePlaylistAndPlayBack = useChangeWholePlaylistAndPlayBack();
+  const addAllToPlaylist = useAddAllToPlaylist();
+  const songList = useSelector(state => (state.getIn(["toplist", "topListDataList"])), shallowEqual)
+  
   return (
     <Wrapper className="list-head">
       <div className="head-left">
@@ -23,6 +32,8 @@ const ListHead = memo(function ListHead(props) {
           <span>{typeof headData.frequency !== "undefined" ? `（${headData.frequency}）` : ""}</span>
         </div>
         <Operates
+          onPlayMusic={e => changeWholePlaylistAndPlayBack(songList.tracks)}
+          onAddToPlaylist={e=> addAllToPlaylist(songList.tracks)}
           favorText={typeof headData.favorCount !== "undefined" ? `(${headData.favorCount})` : ""}
           commentText={typeof headData.commentCount !== "undefined" ? `(${headData.commentCount})` : ""}
           shareText={typeof headData.shareCount !== "undefined" ? `(${headData.shareCount})` : ""}

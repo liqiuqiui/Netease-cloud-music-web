@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import LDiscover from '../pages/discover';
 import LRecommend from '../pages/discover/c-pages/recommend';
 import LTopList from '../pages/discover/c-pages/top-list';
-import LPlayList from '../pages/discover/c-pages/play-list';
+import LPlayList from '../pages/discover/c-pages/playlist';
 import LDjRadio from '../pages/discover/c-pages/djradio';
 import LArtist from '../pages/discover/c-pages/artist';
 import LAlbum from '../pages/discover/c-pages/album';

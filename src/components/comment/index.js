@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from "react";
+import React, { memo, useCallback, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { CommentWrapper } from "./style.js";
 import SendComment from "./c-cpns/send-comment";
@@ -9,6 +9,7 @@ import Pagination from "../pagination";
 
 const Comment = memo(function Comment(props) {
   const {commentInfo: {comments, hotComments, total}, pageSize, currentPage, onPageChange} = props;
+  const commentRef  = useRef();
   // const [currentPage, setCurrentPage] = useState(1);
   // console.log("hot")
   // const hotArr = [];
@@ -60,14 +61,12 @@ const Comment = memo(function Comment(props) {
   //   setCurrentPage(newPage)
   // },[setCurrentPage])
   return (
-    <CommentWrapper>
+    <CommentWrapper ref={commentRef}>
       <SendComment commentNum={total || 0}/>
       {currentPage === 1 &&!!hotComments?.length&& <>
         <h3 className="comment-title">最热评论</h3>
         {
-          hotComments?.map((item) => {
-            return <CommentItem commentObj={item} key={item.commentId}/>
-          })
+          hotComments?.map((item) => (<CommentItem commentObj={item} key={item.commentId}/>))
         }
         <br/><br/>
         <h3 className="comment-title">最新评论({total})</h3>
@@ -78,7 +77,10 @@ const Comment = memo(function Comment(props) {
       <Pagination
         pageSize={pageSize}
         total={total || 0}
-        onChange={onPageChange}
+        onChange={(...args)=> {
+          window.scrollTo(0,commentRef.current.offsetTop)
+          onPageChange(...args)
+        }}
         currentPage={currentPage}/>
     </CommentWrapper>
   )
