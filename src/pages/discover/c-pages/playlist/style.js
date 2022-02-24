@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   border: solid #ccc;
   border-width: 0 1px;
   background-color: #fff;
+
   .playlist-title {
     height: 42px;
     border-bottom: 2px solid #c20c0c;
@@ -26,6 +27,15 @@ export const Wrapper = styled.div`
         margin: 2px 0 0 12px;
         background-position: right -100px;
         padding-right: 5px;
+        cursor: pointer;
+
+        :hover {
+          background-position-y: -182px;;
+        }
+
+        :hover i {
+          background-position-y: -141px;
+        }
 
         i {
           display: inline-block;
@@ -178,4 +188,10 @@ export const Wrapper = styled.div`
 
   }
 
+  .playlist-body {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    //margin-top: 30px;
+  }
 `;
