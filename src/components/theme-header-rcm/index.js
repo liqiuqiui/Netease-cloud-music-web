@@ -1,27 +1,27 @@
 import React, { memo, Fragment } from 'react';
-import propTypes from 'prop-types';
+import { exact, string, arrayOf } from 'prop-types';
 import { ThemeHeaderWrapper } from './style';
+import { Link } from "react-router-dom";
 
- const LThemeHeaderRCM = memo(function LThemeHeaderRCM(props) {
-  const { title, keywords } = props
-
+const LThemeHeaderRCM = memo(function LThemeHeaderRCM(props) {
+  const {title, keywords, more} = props
+  
   return (
-    <ThemeHeaderWrapper >
+    <ThemeHeaderWrapper>
       <div className="left">
         <h3>
-          <i className="sprite_02"></i>
-          <a href="">{title}</a>
+          <i className="sprite_02"/>
+          <Link to={title.to}>{title.text}</Link>
         </h3>
         <div className="keyword">
           {
             keywords.map((item, index) => {
               return (
-                <Fragment key={item.title}>
-                  <a href='todo'>{item.title} </a>
+                <Fragment key={item.text}>
+                  <Link to={item.to}>{item.text} </Link>
                   {
-                    keywords.length -1 > index ? <span className="divider">|</span> : ''
+                    keywords.length - 1 > index ? <span className="divider">|</span> : ''
                   }
-                  
                 </Fragment>
               )
             })
@@ -29,20 +29,34 @@ import { ThemeHeaderWrapper } from './style';
         </div>
       </div>
       <div className="right">
-        <a href="todo">更多</a>
-        <span className="sprite_02"></span>
+        <Link to={more.to}>{more.text}</Link>
+        <span className="sprite_02"/>
       </div>
-
+    
     </ThemeHeaderWrapper>
   )
- })
+})
 
 LThemeHeaderRCM.propTypes = {
-  title: propTypes.string.isRequired,
-  keywords: propTypes.array
+  title: exact({
+    text: string.isRequired,
+    to: string
+  }).isRequired,
+  keywords: arrayOf(exact({
+    text: string.isRequired,
+    to: string
+  })),
+  more: exact({
+    text: string.isRequired,
+    to: string
+  })
 }
 
 LThemeHeaderRCM.defaultProps = {
-  keywords: []
+  keywords: [],
+  more: {
+    text: "更多",
+    to: "#"
+  }
 }
 export default LThemeHeaderRCM
