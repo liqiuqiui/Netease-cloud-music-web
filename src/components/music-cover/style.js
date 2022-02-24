@@ -26,7 +26,6 @@ export const LMusicCoverWrapper = styled.div`
       width: 140px;
       height: 27px;
       background-position: 0 -537px;
-      /* border: 1px solid #000; */
 
       .headset {
         width: 14px;
@@ -56,7 +55,6 @@ export const LMusicCoverWrapper = styled.div`
   }
 
   .desc {
-
     margin: 8px 0 3px;
     font-size: 14px;
     overflow: hidden;
@@ -68,7 +66,8 @@ export const LMusicCoverWrapper = styled.div`
     > a {
       color: #000;
     }
-    .dj{
+
+    .dj {
       display: inline-block;
       position: relative;
       top: -1px;
@@ -77,6 +76,15 @@ export const LMusicCoverWrapper = styled.div`
       width: 35px;
       height: 15px;
       background-position: -31px -658px;
+    }
+  }
+
+  .multi-desc {
+    font-size: 14px;
+    margin: 8px 0 3px;
+
+    a {
+      color: #000;
     }
   }
 
@@ -90,5 +98,7 @@ export const LMusicCoverWrapper = styled.div`
       color: #666;
     }
   }
+
+
 `;
 
