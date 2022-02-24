@@ -5,7 +5,7 @@ import { Pagination } from "antd";
 import PropTypes from "prop-types";
 
 const LPagination = memo(function LPagination(props) {
-  const {currentPage, total, pageSize, onChange} = props;
+  const {currentPage, total, pageSize, onChange, style} = props;
   const itemRender = (current, type, originalElement) => {
     if (type === 'prev') {
       return <button className="prev">上一页</button>;
@@ -17,7 +17,7 @@ const LPagination = memo(function LPagination(props) {
   }
   
   return (
-    <PaginationWrapper>
+    <PaginationWrapper style={{...style}}>
       <Pagination
         current={currentPage}
         // defaultCurrent={1}
