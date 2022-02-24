@@ -13,6 +13,7 @@ import LSongDetail from "../pages/discover/c-pages/song-detail";
 
 import LMine from '../pages/mine';
 import LFriend from '../pages/friend';
+import NotFound from "../pages/404";
 
 const routes = [
   {
@@ -26,7 +27,7 @@ const routes = [
     routes: [
       {
         path: '/discover',
-        exact:true,
+        exact: true,
         render: () => <Redirect to="/discover/recommend"/>
       },
       {
@@ -60,6 +61,10 @@ const routes = [
             routeProps.history.goBack();
           return <LSongDetail/>
         }
+      },
+      {
+        path: "/",
+        render: () => <Redirect to={"/404"}/>
       }
     ]
   },
@@ -71,7 +76,10 @@ const routes = [
     path: '/friend',
     component: LFriend
   },
-
+  {
+    path: "/404",
+    component: NotFound
+  }
 ]
 
 
