@@ -23,7 +23,10 @@ export default memo(function HYNewAlbum() {
   // console.log(albums);
   return (
     <AlbumWrapper>
-      <HYThemeHeaderRCM title="新碟上架"/>
+      <HYThemeHeaderRCM
+        title={{text: "新碟上架", to: "/discover/album"}}
+        more={{text: "更多", to: "/discover/album"}}
+      />
       <div className="content">
         <button className="arrow arrow-left sprite_02"
                 onClick={e => pageRef.current.prev()}/>

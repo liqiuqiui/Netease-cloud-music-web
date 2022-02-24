@@ -37,7 +37,7 @@ export const getHotRecommendsAction = (limit) => async dispatch => {
   songSheetRes.length = 8
   dispatch(changeHotRecommendsAction(songSheetRes))
   
-  console.log(songSheetRes)
+  // console.log(songSheetRes)
 }
 
 
