@@ -18,14 +18,14 @@ const LMusicCover = memo(function LMusicCover(props) {
         <div className="bottom  sprite_cover">
           <span className="sprite_icon headset"/>
           <span className="count">{getFormatCount(info.playCount)}</span>
-          <span className="sprite_icon play" onClick={e=>onPlay(info.id)}>play</span>
+          <span className="sprite_icon play" onClick={e => onPlay(info.id)}>play</span>
         </div>
       </div>
       {
         multiline
           ? <>
             <p className="multi-desc text-nowrap">
-              <Link title={info.desc} to={"playlist?id=" + info.id}>{info.desc}</Link>
+              <Link title={info.desc} to={"/playlist?id=" + info.id}>{info.desc}</Link>
             </p>
             <p className="auth text-nowrap">
               <span>by</span>
@@ -72,5 +72,7 @@ LMusicCover.defaultProps = {
   info: {
     playCount: 0
   },
+  onPlay: () => {
+  }
 }
 export default LMusicCover;

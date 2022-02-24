@@ -46,6 +46,7 @@ export const LMusicCoverWrapper = styled.div`
         height: 17px;
         background-position: 0 0;
         text-indent: -9999px;
+        cursor: pointer;
 
         &:hover {
           background-position: 0 -60px;
