@@ -6,7 +6,11 @@ import LDiscover from '../pages/discover';
 import LRecommend from '../pages/discover/c-pages/recommend';
 import LTopList from '../pages/discover/c-pages/top-list';
 import LPlayList from '../pages/discover/c-pages/playlist';
+
 import LDjRadio from '../pages/discover/c-pages/djradio';
+import DjRadioHome from "../pages/discover/c-pages/djradio/c-pages/djradio-home";
+import DjRadioCategory from "../pages/discover/c-pages/djradio/c-pages/djradio-category";
+
 import LArtist from '../pages/discover/c-pages/artist';
 import LAlbum from '../pages/discover/c-pages/album';
 import LSongDetail from "../pages/discover/c-pages/song-detail";
@@ -14,6 +18,8 @@ import LSongDetail from "../pages/discover/c-pages/song-detail";
 import LMine from '../pages/mine';
 import LFriend from '../pages/friend';
 import NotFound from "../pages/404";
+import DjRadioRecommend from "../pages/discover/c-pages/djradio/c-pages/djradio-recommend";
+import DjRadioRank from "../pages/discover/c-pages/djradio/c-pages/djradio-rank";
 
 const routes = [
   {
@@ -44,7 +50,26 @@ const routes = [
       },
       {
         path: '/discover/djradio',
-        component: LDjRadio
+        component: LDjRadio,
+        routes: [
+          {
+            path: "/discover/djradio",
+            exact: true,
+            component: DjRadioHome,
+          },
+          {
+            path: "/discover/djradio/category",
+            component: DjRadioCategory
+          },
+          {
+            path:"/discover/djradio/recommend",
+            component: DjRadioRecommend
+          },
+          {
+            path: "/discover/djradio/rank",
+            component: DjRadioRank
+          }
+        ]
       },
       {
         path: '/discover/artist',

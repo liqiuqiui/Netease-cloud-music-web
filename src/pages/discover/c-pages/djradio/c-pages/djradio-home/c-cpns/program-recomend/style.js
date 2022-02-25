@@ -32,6 +32,7 @@ export const Wrapper = styled.div`
           width: 40px;
           height: 40px;
           position: relative;
+          cursor: pointer;
 
           .icon {
             display: none;

@@ -28,7 +28,7 @@ const ProgramRecommend = memo(function ProgramRecommend(props) {
             dataList?.slice(0, 10)?.map(item => {
               return (
                 <li key={item.id} className="list-item">
-                  <div className="list-item-left">
+                  <div className="list-item-left" title="播放">
                     <img src={item.coverUrl + "?param=40y40"} alt=""/>
                     <i className="icon sprite_icon"/>
                   </div>
@@ -37,7 +37,11 @@ const ProgramRecommend = memo(function ProgramRecommend(props) {
                       <Link to={"/discover/djradio/program?id=" + item.id}>{item.name}</Link>
                     </h3>
                     <p className="list-item-center-bottom text-nowrap">
-                      <Link to={"/discover/djradio/detail?id=" + item.radio.id}>{item.radio.name}</Link>
+                      <Link
+                        title={item.radio.name}
+                        to={"/discover/djradio/detail?id=" + item.radio.id}>
+                        {item.radio.name}
+                      </Link>
                     </p>
                   </div>
                   <Link

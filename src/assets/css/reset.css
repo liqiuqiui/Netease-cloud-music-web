@@ -62,7 +62,7 @@ body, select, input, button {
 .wrap-v2 {
   width: 980px;
   margin: 0 auto;
-  box-sizing: content-box;
+  /*box-sizing: content-box;*/
   /*border: solid #d3d3d3;*/
   /*border-width: 0 1px;*/
 }
@@ -142,4 +142,8 @@ span:hover.link {
 
 .wrap-bg-left-line {
   background: url(../img/wrap-bg-left-line.png) repeat-y center 0;;
+}
+
+.radio-bg {
+  background: url(../img/radio_bg.png) no-repeat 0 -99999px;
 }

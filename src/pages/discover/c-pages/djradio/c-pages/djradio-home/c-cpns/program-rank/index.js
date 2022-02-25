@@ -25,7 +25,7 @@ const ProgramRank = memo(function ProgramRank(props) {
                   key={item.program.id}
                   className="rank-list-item">
                 <div className="rank">
-                  <em>{"0" + (index + 1)}</em>
+                  <em>{((index + 1) + "").padStart(2, "0")}</em>
                   <span>
                     <i className="sprite_icon2 icon"/>
                     {
@@ -34,7 +34,7 @@ const ProgramRank = memo(function ProgramRank(props) {
                     }
                   </span>
                 </div>
-                <div className="play">
+                <div className="play" title="播放">
                   <img src={item.program.coverUrl + "?param=40y40"} alt=""/>
                   <i className="icon sprite_icon"/>
                 </div>
@@ -44,7 +44,11 @@ const ProgramRank = memo(function ProgramRank(props) {
                     <Link to={"/discover/djradio/program?id=" + item.program.id}>{item.program.name}</Link>
                   </h3>
                   <p className="text-nowrap">
-                    <Link to={"/discover/djradio/detail?id=" + item.program.radio.id}>{item.program.radio.name}</Link>
+                    <Link
+                      title={item.program.radio.name}
+                      to={"/discover/djradio/detail?id=" + item.program.radio.id}>
+                      {item.program.radio.name}
+                    </Link>
                   </p>
                 </div>
                 <span className="hot sprite_table">
