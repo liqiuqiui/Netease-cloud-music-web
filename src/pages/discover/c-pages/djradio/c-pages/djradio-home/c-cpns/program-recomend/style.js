@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
 
 
   .recommend-list {
-    border: solid #ccc;
-    border-width: 0 1px;
+    border: 1px solid #e2e2e2;
+    border-top: none;
 
     ul {
       .list-item {
