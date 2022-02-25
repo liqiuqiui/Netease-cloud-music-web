@@ -10,11 +10,8 @@ import { Link } from "react-router-dom";
 
 const ProgramRecommend = memo(function ProgramRecommend(props) {
   const dataList = useSelector(state => state.getIn(["djRadio", "programRecommendList"]).programs, shallowEqual);
-  useEffect(() => {
-    console.log(dataList)
-  }, [dataList])
   return (
-    <Wrapper>
+    <Wrapper className="program-recmmend">
       <ThemeHeaderDj
         title={{
           text: "推荐节目",
