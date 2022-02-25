@@ -33,6 +33,7 @@ const ProgramRecommend = memo(function ProgramRecommend(props) {
                 <li key={item.id} className="list-item">
                   <div className="list-item-left">
                     <img src={item.coverUrl + "?param=40y40"} alt=""/>
+                    <i className="icon sprite_icon"/>
                   </div>
                   <div className="list-item-center">
                     <h3 className="list-item-center-top text-nowrap" title={item.name}>

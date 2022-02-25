@@ -20,6 +20,10 @@ export const Wrapper = styled.div`
           background-color: #eee !important;
         }
 
+        &:hover .icon {
+          display: block;
+        }
+
         &:nth-child(even) {
           background-color: #f7f7f7;
         }
@@ -27,6 +31,18 @@ export const Wrapper = styled.div`
         &-left {
           width: 40px;
           height: 40px;
+          position: relative;
+
+          .icon {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 22px;
+            height: 22px;
+            background-position: 0 -85px;
+          }
         }
 
         &-center {
