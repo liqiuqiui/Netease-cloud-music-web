@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   .title {
     font-size: 24px;
 
-    span {
+    span.dot {
       font-family: simsun, \\5b8b\\4f53;
       font-size: 24px;
       color: #333;

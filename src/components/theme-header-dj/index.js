@@ -16,9 +16,9 @@ const ThemeHeaderDj = memo(function ThemeHeaderDj(props) {
             ? <Link to={title.to}>{title.text}</Link>
             : <span>{title}</span>
         }
-        {showDjText ? (<><span>·</span>电台</>) : ""}
+        {showDjText ? (<><span className="dot">·</span>电台</>) : ""}
       </h3>
-      {rightElement ? rightElement : <Link className="more" to={more.to}>{more.text}</Link>}
+      {rightElement ? rightElement : (more && <Link className="more" to={more.to}>{more.text}</Link>)}
     </Wrapper>
   )
 });
