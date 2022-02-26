@@ -72,7 +72,6 @@ const changeNewRadioAction = (newRadio) => ({
 export const getNewRadioAction = id => {
   return dispatch => {
     getNewRadio(id).then(res => {
-      console.log(res);
       dispatch(changeNewRadioAction(res.djRadios));
     })
   }
