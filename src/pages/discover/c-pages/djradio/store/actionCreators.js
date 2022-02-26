@@ -1,11 +1,12 @@
 import * as actionTypes from "./constants";
 import {
   getCateRecommendList,
-  getDjRadioCategories,
+  getDjRadioCategories, getNewRadio,
   getProgramRankList,
-  getProgramRecommendList
+  getProgramRecommendList, getRadioTopList
 } from "../../../../../services/djradio";
 
+//电台分类列表
 const changeDjRadioCategoriesAction = (djRadioCategories) => ({
   type: actionTypes.CHANGE_DJ_RADIO_CATEGORIES,
   djRadioCategories
@@ -20,6 +21,7 @@ export const getDjRadioCategoriesAction = () => {
 }
 
 
+//电台主页的推荐列表
 const changeProgramRecommendListAction = (programRecommendList) => ({
   type: actionTypes.CHANGE_DJ_RADIO_PROGRAM_RECOMMEND_LIST,
   programRecommendList
@@ -31,6 +33,7 @@ export const getProgramRecommendListAction = () => {
 }
 
 
+//电台主页的节目排行榜
 const changeProgramRankListAction = (programRankList) => ({
   type: actionTypes.CHANGE_DJ_RADIO_PROGRAM_RANK_LIST,
   programRankList
@@ -41,6 +44,8 @@ export const getProgramRankListAction = () => {
   }
 }
 
+
+//电台主页的推荐
 const changeCateRecommendListAction = (cateRecommendList) => ({
   type: actionTypes.CHANGE_CATE_RECOMMEND_LIST,
   cateRecommendList
@@ -59,5 +64,29 @@ export const getCateRecommendListAction = (idList) => {
   }
 }
 
+//电台分类下的优秀新电台
+const changeNewRadioAction = (newRadio) => ({
+  type: actionTypes.CHANGE_NEW_RADIO,
+  newRadio
+});
+export const getNewRadioAction = id => {
+  return dispatch => {
+    getNewRadio(id).then(res => {
+      console.log(res);
+      dispatch(changeNewRadioAction(res.djRadios));
+    })
+  }
+}
 
-
+//电台分类下的排行榜
+const changeRadioTopListAction = (radioTopList) => ({
+  type: actionTypes.CHANGE_RADIO_TOP_LIST,
+  radioTopList
+});
+export const getRadioTopListAction = (params) => {
+  return dispatch => {
+    getRadioTopList(params).then(res => {
+      dispatch(changeRadioTopListAction(res));
+    })
+  }
+}

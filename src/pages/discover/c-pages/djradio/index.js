@@ -18,7 +18,6 @@ import {
 const DjRadio = memo(function DjRadio(props) {
   const {pathname} = useLocation();
   const isShowCategoryList = /category|djradio$/.test(pathname);
-  console.log("路径", isShowCategoryList, pathname)
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -29,8 +28,7 @@ const DjRadio = memo(function DjRadio(props) {
     //获取节目推荐列表
     dispatch(getProgramRecommendListAction());
     //获取分类推荐列表
-    dispatch(getCateRecommendListAction([2, 6, 3, 2001, 11]))
-    // getCateRecommendList()
+    dispatch(getCateRecommendListAction([2, 6, 3, 2001, 11]));
   }, [dispatch]);
   
   return (

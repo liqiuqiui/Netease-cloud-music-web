@@ -20,3 +20,9 @@ export const getCateRecommendList = (idList = [2, 6, 3, 2001, 11]) => {
     Promise.all(requestList).then(resolve, reject);
   })
 }
+
+// 获取优秀新电台
+export const getNewRadio = (cateId) => request.get("/dj/recommend/type", {params: {type: cateId}});
+
+//获取电排排行榜
+export const getRadioTopList = (params = {}) => request.get("/dj/radio/hot", {params});
