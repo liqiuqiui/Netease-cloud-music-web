@@ -18,7 +18,10 @@ const ThemeHeaderDj = memo(function ThemeHeaderDj(props) {
         }
         {showDjText ? (<><span className="dot">·</span>电台</>) : ""}
       </h3>
-      {rightElement ? rightElement : (more && <Link className="more" to={more.to}>{more.text}</Link>)}
+      {rightElement
+        ? rightElement
+        : (more && <Link onClick={() => window.scrollTo(0, 0)}
+                         className="more" to={more.to}>{more.text}</Link>)}
     </Wrapper>
   )
 });
