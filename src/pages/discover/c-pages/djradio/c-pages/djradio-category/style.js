@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   .excellent-new-radio {
     .new-radio-list {
       display: flex;
-      justify-content: space-between;
+      column-gap: 37px;
       padding-top: 16px;
 
       &-item {

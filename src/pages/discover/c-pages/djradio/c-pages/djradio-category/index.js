@@ -37,10 +37,11 @@ const DjRadioCategory = memo(function DjRadioCategory(props) {
   
   const pageChange = useCallback((page) => {
     setPage(page);
-    window.scrollTo(0,radioRankRef.current.offsetTop);
+    window.scrollTo(0, radioRankRef.current.offsetTop);
   }, [setPage])
   return (
     <Wrapper className="djradio-category">
+      {/* 优秀新电台 */}
       <div className="excellent-new-radio">
         <ThemeHeaderDj title="优秀新电台" showDjText={false}/>
         <ul className="new-radio-list">{
@@ -59,6 +60,7 @@ const DjRadioCategory = memo(function DjRadioCategory(props) {
           })
         }</ul>
       </div>
+      {/* 排行榜 */}
       <div className="radio-rank" ref={radioRankRef}>
         <ThemeHeaderDj showDjText={false} title="电台排行榜" rightElement={
           <div>
