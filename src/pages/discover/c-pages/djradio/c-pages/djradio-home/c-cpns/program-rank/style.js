@@ -144,7 +144,6 @@ export const Li = styled.li`
     & > i {
       padding: 0 4px;
       background-position: right -318px;
-      box-sizing: content-box;
 
       > i {
         margin-left: -4px;

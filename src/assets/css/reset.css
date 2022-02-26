@@ -11,6 +11,10 @@ ul, ol, li {
   list-style: none;
 }
 
+i {
+  display: inline-block;
+}
+
 a {
   text-decoration: none;
   color: #666;

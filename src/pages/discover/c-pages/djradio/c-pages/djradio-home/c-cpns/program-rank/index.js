@@ -13,8 +13,8 @@ const ProgramRank = memo(function ProgramRank(props) {
   return (
     <Wrapper className="program-rank">
       <ThemeHeaderDj
-        more={{text: "更多 >", to: "/discover/diradio/rank"}}
-        title={{text: "节目排行榜", to: "/discover/diradio/rank"}}
+        more={{text: "更多 >", to: "/discover/djradio/rank"}}
+        title={{text: "节目排行榜", to: "/discover/djradio/rank"}}
         showDjText={false}
       />
       <div className="rank-list">
