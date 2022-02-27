@@ -29,12 +29,15 @@ export const AlbumWrapper = styled.div`
   .album-info {
     font-size: 12px;
     width: ${props => props.size};
-    
+
     .name {
-      color: #000;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
+
+      a {
+        color: #000;
+      }
     }
 
     .artist {
