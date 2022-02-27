@@ -262,7 +262,7 @@ export default memo(function LPlayerBar(props) {
             <div className="image">
               <NavLink
                 className="msk sprite_playbar"
-                to={{pathname: "/discover/song-detail/" + currentSong?.id}}
+                to={"id" in currentSong ? ("/discover/song-detail/" + currentSong?.id) : "#"}
               />
               <img
                 src={
