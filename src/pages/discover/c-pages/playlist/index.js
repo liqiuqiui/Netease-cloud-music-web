@@ -68,39 +68,42 @@ const Playlist = memo(function Playlist(props) {
           <Link onClick={() => setIsHot(true)}
                 to={"/discover/playlist?order=hot" + (query?.cate ? ("&cate=" + query.cate) : "")}>热门</Link>
         </div>
-      </div>
-      {/* 分类选择弹出框 */}
-      <div className="cate-pop" style={{display: showCate ? "block" : "none"}}>
-        <div className="cate-arrow sprite_icon"/>
-        <div className="all-cate">
-          <Link className="sprite_button2"
-                to={"/discover/playlist" + (isHot ? "?order=hot" : "")}>全部风格</Link>
-        </div>
-        <ul className="cate-list">
-          {
-            categoryList.map((item) => {
-              return (
-                <li className="row" key={item.name}>
-                  <div className="cate-name">
-                    <i className="sprite_icon2"/>
-                    <span>{item.name}</span>
-                  </div>
-                  <div className="cates">
-                    {item.subs.map((cate) => {
-                      return (
-                        <span key={cate.name}>
+  
+  
+        {/* 分类选择弹出框 */}
+        <div className="cate-pop" style={{display: showCate ? "block" : "none"}}>
+          <div className="cate-arrow sprite_icon"/>
+          <div className="all-cate">
+            <Link className="sprite_button2"
+                  to={"/discover/playlist" + (isHot ? "?order=hot" : "")}>全部风格</Link>
+          </div>
+          <ul className="cate-list">
+            {
+              categoryList.map((item) => {
+                return (
+                  <li className="row" key={item.name}>
+                    <div className="cate-name">
+                      <i className="sprite_icon2"/>
+                      <span>{item.name}</span>
+                    </div>
+                    <div className="cates">
+                      {item.subs.map((cate) => {
+                        return (
+                          <span key={cate.name}>
                           <Link
                             to={"/discover/playlist?cate=" + cate.name + (isHot ? "&order=hot" : "")}>{cate.name}</Link>
                           <span className="line">|</span>
                         </span>)
-                    })}
-                  </div>
-                </li>
-              )
-            })
-          }
-        </ul>
+                      })}
+                    </div>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
       </div>
+   
       {/* 歌单展示 */}
       <div className="playlist-body">{
         playList.map((item) => {
