@@ -56,7 +56,7 @@ const ListBody = memo(function ListBody(props) {
             {index < 3 && <img src={data.al.picUrl + "?param=50y50"} alt=""/>}
             {/* 播放图标 */}
             <i onClick={e => playMusic(data.id)}
-               className={"play sprite_table" + (currentSong.id === data.id ? " current-play" : "")}/>
+               className={"play sprite_table" + (currentSong?.id === data.id ? " current-play" : "")}/>
             {/* 歌曲名称 */}
             <span className="text-nowrap" style={{maxWidth: index < 3 ? "61%" : "80%"}}>
               <Link
