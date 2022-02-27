@@ -1,9 +1,21 @@
-import React, { memo } from 'react'
+//lib
+import React, { memo } from "react";
 
-export default memo(function LAlbum() {
+//components
+import { Wrapper } from "./style";
+import HotAlbum from "./c-cpns/hot-album";
+import AllAlbum from "./c-cpns/all-album";
+
+const Album = memo(function Album(props) {
   return (
-    <div>
-      LAlbum
-    </div>
+    <Wrapper className="album wrap-v2">
+      <HotAlbum/>
+      <AllAlbum/>
+    </Wrapper>
   )
-})
+});
+
+Album.propTypes = {};
+Album.defaultProps = {};
+
+export default Album;

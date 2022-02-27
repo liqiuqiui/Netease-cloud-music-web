@@ -8,7 +8,7 @@ export const AlbumWrapper = styled.div`
     width: ${props => props.width + "px"};
     height: ${props => props.size + "px"};
     overflow: hidden;
-    margin-top: 15px;
+    //margin-top: 15px;
 
     img {
       width: ${props => props.size + "px"};
@@ -29,11 +29,7 @@ export const AlbumWrapper = styled.div`
   .album-info {
     font-size: 12px;
     width: ${props => props.size};
-
-    a {
-      display: block;
-    }
-
+    
     .name {
       color: #000;
       white-space: nowrap;

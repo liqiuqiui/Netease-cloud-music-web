@@ -38,7 +38,7 @@ export default memo(function HYNewAlbum() {
                   <div key={item} className="page">
                     {
                       albums?.slice(item * 5, (item + 1) * 5)?.map(item => {
-                        return <HYAlbumCover key={item.id}
+                        return <HYAlbumCover style={{marginTop:"15px"}} key={item.id}
                                              info={item}
                                              size={100}
                                              width={118}

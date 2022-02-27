@@ -22,7 +22,6 @@ import LSongDetail from "../pages/discover/c-pages/song-detail";
 import LMine from '../pages/mine';
 import LFriend from '../pages/friend';
 import NotFound from "../pages/404";
-import { log } from "@craco/craco/lib/logger";
 
 
 const routes = [
@@ -85,7 +84,13 @@ const routes = [
       },
       {
         path: '/discover/album',
-        component: LAlbum
+        render(routeProps){
+          if (!routeProps.location.search)
+            routeProps.location.search = "?page=1&area=ALL"
+          return <LAlbum/>
+  
+        },
+        // component: LAlbum
       },
       {
         path: "/discover/song-detail/:id",
