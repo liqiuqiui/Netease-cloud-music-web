@@ -8,7 +8,6 @@ export const AlbumWrapper = styled.div`
     width: ${props => props.width + "px"};
     height: ${props => props.size + "px"};
     overflow: hidden;
-    //margin-top: 15px;
 
     img {
       width: ${props => props.size + "px"};
