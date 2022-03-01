@@ -22,6 +22,7 @@ import LSongDetail from "../pages/discover/c-pages/song-detail";
 import LMine from '../pages/mine';
 import LFriend from '../pages/friend';
 import NotFound from "../pages/404";
+import PlaylistDetail from "../pages/discover/c-pages/playlist-detail";
 
 
 const routes = [
@@ -49,6 +50,7 @@ const routes = [
       },
       {
         path: '/discover/playlist',
+        exact: true,
         component: LPlayList
       },
       {
@@ -99,6 +101,10 @@ const routes = [
             routeProps.history.goBack();
           return <LSongDetail/>
         }
+      },
+      {
+        path:  "/discover/playlist/:id",
+        component: PlaylistDetail
       },
       {
         path: "/",
