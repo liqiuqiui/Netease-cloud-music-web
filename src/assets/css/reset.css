@@ -151,3 +151,7 @@ span:hover.link {
 .radio-bg {
   background: url(../img/radio_bg.png) no-repeat 0 -99999px;
 }
+
+.white-r{
+  background: url(../img/white-r-icon@3x.png);
+}
