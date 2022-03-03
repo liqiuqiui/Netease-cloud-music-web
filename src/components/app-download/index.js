@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 
 import { AppDownLoadWrapper } from "./style.js";
-import ThemeHeaderSmall from "../../../../../../components/theme-header-small";
+import ThemeHeaderSmall from "../theme-header-small";
 
 const AppDownload = memo(function AppDownload(props) {
   return (

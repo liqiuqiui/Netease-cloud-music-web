@@ -66,9 +66,7 @@ const ListBody = memo(function ListBody(props) {
               {!!data.alia.length && <span title={data.alia[0]} style={{color: "#aeaeae"}}> - ({data.alia})</span>}
             </span>
             {/* mv标志 */}
-            {data?.mv > 0 && <Link to={"/mv?id="+data.mv} className="sprite_table mv" style={{
-            
-            }}/>}
+            {data?.mv > 0 && <Link to={"/mv?id="+data.mv} className="sprite_table mv"/>}
           </>
         );
       }

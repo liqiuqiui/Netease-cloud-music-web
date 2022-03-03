@@ -11,7 +11,7 @@ import { parseLyric } from "../../../../utils/parse-lyric";
 import { getSimilarPlaylist, getSongComments } from "../../../../services/song-detail";
 import Comment from "../../../../components/comment";
 import SimilarSong from "./c-cpns/similar-song";
-import AppDownload from "./c-cpns/app-download";
+import AppDownload from "../../../../components/app-download";
 import SubListSmall from "../../../../components/sub-list-small";
 
 const Player = memo(function Player(props) {
@@ -64,13 +64,13 @@ const Player = memo(function Player(props) {
                   marginRight: "5px",
                   color: "#999"
                 }}>by</span>
-              <Link to={"/home/"+data?.creator?.userId}>{data?.creator?.nickname}</Link>
+              <Link to={"/user/home?id"+data?.creator?.userId}>{data?.creator?.nickname}</Link>
             </div>)}
           fieldMap={{
             imgUrl: "coverImgUrl",
             content: "name",
           }}
-          to={data => "/playlist/"+data.id}
+          to={data => "/discover/playlist/"+data.id}
         />
         <SimilarSong/>
         <AppDownload/>

@@ -60,7 +60,7 @@ SubListSmall.propTypes = {
     id: PropTypes.any,
     // to: PropTypes.string.isRequired,
   }),
-  to: PropTypes.func.isRequired,
+  to: PropTypes.func,
 };
 
 
