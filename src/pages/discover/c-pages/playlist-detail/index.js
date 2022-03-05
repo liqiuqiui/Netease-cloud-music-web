@@ -166,8 +166,6 @@ const PlaylistDetail = memo(function PlaylistDetail(props) {
                   )
                 })
               }
-              {/*<Link className="sprite_button" to={"#"}><i className="sprite_button">治愈</i></Link>*/}
-              {/*<Link className="sprite_button" to={"#"}><i className="sprite_button">感动</i></Link>*/}
             </div>
             <p className="desc">
               <b>介绍：</b>{playlistDetail.description}
