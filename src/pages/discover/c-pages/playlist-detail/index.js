@@ -66,7 +66,7 @@ const PlaylistDetail = memo(function PlaylistDetail(props) {
         return (
           <>
             {/* 歌曲名称 */}
-            <span className="text-nowrap" style={{width: "210px"}}>
+            <span className="text-nowrap" style={{maxWidth: "210px"}}>
               <Link
                 title={!!data.alia.length ? `${data.name} - (${data.alia[0]})` : data.name}
                 to={"/discover/song-detail/" + data.id}
@@ -221,7 +221,7 @@ const PlaylistDetail = memo(function PlaylistDetail(props) {
                       }}
                       listData={hotList}
                       fieldMap={{content: "name", imgUrl: "coverImgUrl"}}
-                      to={({id}) => "/discover/playlist/" + id}
+                      to={({id}) => "/discover/playlist-detail/" + id}
         />
         <AppDownload/>
       </Right>

@@ -14,12 +14,12 @@ const AlbumCover = memo(function AlbumCover(props) {
     <AlbumWrapper style={style} size={size} width={width} bgp={bgp}>
       <div className="album-image" title={info.name}>
         <img src={getFormatImage(info.picUrl, size)} alt=""/>
-        <Link to={"/album?id=" + info.id} className="cover image_cover">{info.name}</Link>
+        <Link to={"/discover/album-detail/" + info.id} className="cover image_cover">{info.name}</Link>
       </div>
       <div className="album-info">
         <div className="name text-nowrap"><Link
           title={info.name}
-          to={"/album?id=" + info.id}>
+          to={"/discover/album-detail/" + info.id}>
           {info.name}
         </Link>
         </div>

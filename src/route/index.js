@@ -23,6 +23,7 @@ import LMine from '../pages/mine';
 import LFriend from '../pages/friend';
 import NotFound from "../pages/404";
 import PlaylistDetail from "../pages/discover/c-pages/playlist-detail";
+import AlbumDetail from "../pages/discover/c-pages/album-detail";
 
 
 const routes = [
@@ -95,6 +96,10 @@ const routes = [
         // component: LAlbum
       },
       {
+        path: "/discover/album-detail/:id",
+        component: AlbumDetail
+      },
+      {
         path: "/discover/song-detail/:id",
         render: (routeProps) => {
           if (routeProps.match.params.id === "undefined")
@@ -103,7 +108,7 @@ const routes = [
         }
       },
       {
-        path:  "/discover/playlist/:id",
+        path:  "/discover/playlist-detail/:id",
         component: PlaylistDetail
       },
       {

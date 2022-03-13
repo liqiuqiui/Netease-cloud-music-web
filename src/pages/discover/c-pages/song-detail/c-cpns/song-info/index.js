@@ -53,7 +53,7 @@ const SongInfo = memo(function SongInfo(props) {
             <div className="sprite_icon2 ico"/>
             <div className="name">
               <em>{songDetail?.name}</em>
-              {songDetail?.mv > 0 && <Link to="#" className="mv sprite_icon2" title="播放mv"/>}
+              {songDetail?.mv > 0 && <Link to={"/discover/mv/"+songDetail.mv} className="mv sprite_icon2" title="播放mv"/>}
               {songDetail?.tns?.length > 0 && <div className="alias">{songDetail?.tns[0]}</div>}
             </div>
           </div>
@@ -61,7 +61,7 @@ const SongInfo = memo(function SongInfo(props) {
             歌手：
             {<Singer singerList={songDetail?.ar} />}
           </p>
-          <p>所属专辑：<Link to={"/album?id="+songDetail?.al?.id}>{songDetail?.al?.name}</Link></p>
+          <p>所属专辑：<Link to={"/discover/album-detail/"+songDetail?.al?.id}>{songDetail?.al?.name}</Link></p>
           <Operates onPlayMusic={e=>playMusic(songDetail.id)} onAddToPlaylist={e=>addToPlayList(songDetail.id)} />
           <div className="lyric-content" style={{
             height: isShowMoreLyric ? "auto" : 20 * 10 + "px"

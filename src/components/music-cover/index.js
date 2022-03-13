@@ -14,7 +14,7 @@ const LMusicCover = memo(function LMusicCover(props) {
     <LMusicCoverWrapper style={{...style}}>
       <div className="cover">
         <img title={info.desc} src={getFormatImage(info.imgUrl, 140)} alt=""/>
-        <Link to={"/discover/playlist/" + info.id} title={info.desc} className="sprite_cover mask"/>
+        <Link to={"/discover/playlist-detail/" + info.id} title={info.desc} className="sprite_cover mask"/>
         <div className="bottom  sprite_cover">
           <span className="sprite_icon headset"/>
           <span className="count">{getFormatCount(info.playCount)}</span>
@@ -25,7 +25,7 @@ const LMusicCover = memo(function LMusicCover(props) {
         multiline
           ? <>
             <p className="multi-desc text-nowrap">
-              <Link title={info.desc} to={"/discover/playlist/" + info.id}>{info.desc}</Link>
+              <Link title={info.desc} to={"/discover/playlist-detail/" + info.id}>{info.desc}</Link>
             </p>
             <p className="auth text-nowrap">
               <span>by</span>
@@ -40,7 +40,7 @@ const LMusicCover = memo(function LMusicCover(props) {
           </>
           : <p className="desc">
             <Link
-              to={"/discover/playlist/" + info.id}
+              to={"/discover/playlist-detail/" + info.id}
               title={info.desc}>
               {info.type === 1 ? <i className="dj sprite_icon2"/> : ""}
               {info.desc}
