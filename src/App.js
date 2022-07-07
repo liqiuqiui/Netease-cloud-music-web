@@ -21,12 +21,12 @@ export default memo(function App() {
   
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <LAppHeader/>
         {renderRoutes(routes)}
         <LAppFooter/>
         <LAppPlayerBar/>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   
   )

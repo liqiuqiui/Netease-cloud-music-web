@@ -43,9 +43,9 @@ const Artist = memo(function Artist(props) {
     }
   });
   
-  useEffect(() => {
-    setParams(v => ({...v, ...query}));
-  }, [search]);
+  // useEffect(() => {
+  //   setParams(v => ({...v, ...query}));
+  // }, [search]);
   
   useEffect(() => {
     let paramsInitial = "";
@@ -54,6 +54,8 @@ const Artist = memo(function Artist(props) {
     else paramsInitial = params.initial.toLowerCase();
     
     console.log(params)
+    console.warn('请求歌手列表')
+  
     getArtistList({...params, initial: paramsInitial})
     .then(res => setArtistList(res.artists));
   }, [params.initial, params.type, params.area]);
