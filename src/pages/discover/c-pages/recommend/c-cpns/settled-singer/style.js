@@ -46,7 +46,8 @@ export const SingerInfoItem = styled.li`
     border: 1px solid #e9e9e9;
     border-left: none;
     padding-left: 14px;
-
+    overflow: hidden;
+    
     .alias {
       margin-top: 8px;
       font-weight: bolder;

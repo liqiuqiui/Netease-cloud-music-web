@@ -31,7 +31,10 @@ export default memo(function Singer(props) {
             <SingerInfoItem key={singerItem.id}>
               <div className="head"><img src={singerItem.picUrl} alt=""/></div>
               <div className="ifo">
-                <h4 className="alias">{singerItem.alias.length !== 0 ? singerItem.alias : singerItem.name}</h4>
+                <h4 className="alias text-nowrap"
+                    title={singerItem.alias.length !== 0 ? singerItem.alias : singerItem.name}>
+                  {singerItem.alias.length !== 0 ? singerItem.alias : singerItem.name}
+                </h4>
                 <p className="name">{singerItem.name}</p>
               </div>
             </SingerInfoItem>
@@ -39,7 +42,8 @@ export default memo(function Singer(props) {
         })
       }</ul>
       <div className="recruit">
-        <a className="sprite_button" href="https://music.163.com/recruit" target="_blank">申请成为网易音乐人</a>
+        <a className="sprite_button" rel="noopener noreferrer" href="https://music.163.com/recruit"
+           target="_blank">申请成为网易音乐人</a>
       </div>
     </SingerWrapper>
   )

@@ -21,10 +21,14 @@ const LyricPanel = memo(function LyricPanel(props) {
   });
   const liRef = useRef();
   useEffect(() => {
+    // 获取当前歌词li距离父元素顶部的距离
     const liOffsetTop = liRef.current?.offsetTop || 0;
+    // 获取li的高度
     const liOffsetHeight = liRef.current?.offsetHeight || 0;
+    // 计算scrollTop值，用当前歌词li距父元素顶部的距离减去歌词面板高度与歌词li高度差值的一半
     const toDistance = Math.round(liOffsetTop-(260-liOffsetHeight)/2);
     // lyricPanelRef.current.scrollTop = toDistance;
+    // 调用滚动函数，300ms内滚动完成
     scrollTo(lyricPanelRef.current, toDistance, 300)
     // console.log(toDistance);
       // document.quer
