@@ -25,6 +25,7 @@ export const CommentItemWrapper = styled.div`
       line-height: 20px;
       background: #f4f4f4;
       border: 1px solid #dedede;
+      word-break: break-word;
     }
 
     &-top, &-middle {
